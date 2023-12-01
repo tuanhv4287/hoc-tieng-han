@@ -1,0 +1,40 @@
+<button mat-button [matMenuTriggerFor]="khoaHoc">Khóa học</button>
+
+<mat-menu #khoaHoc="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="topikI">topik I</button>
+  <button mat-menu-item [matMenuTriggerFor]="topikII">topik II</button>
+  <button mat-menu-item [matMenuTriggerFor]="nguPhap">Ngữ Pháp</button>
+  <button mat-menu-item [matMenuTriggerFor]="giaoTiep">Giao tiếp</button>
+  <button mat-menu-item>Luyện thi Visa</button>
+</mat-menu>
+
+<mat-menu #topikI="matMenu">
+  <button mat-menu-item>Cấp 1</button>
+  <button mat-menu-item>Cấp 2</button>
+</mat-menu>
+
+<mat-menu #topikII="matMenu">
+  <button mat-menu-item>Cấp 3</button>
+  <button mat-menu-item>Cấp 4</button>
+  <button mat-menu-item>Cấp 5</button>
+  <button mat-menu-item>Cấp 6</button>
+</mat-menu>
+
+<mat-menu #nguPhap="matMenu">
+  <button mat-menu-item>Sơ cấp</button>
+  <button mat-menu-item>Trung Cấp</button>
+  <button mat-menu-item>Cao Cấp</button>
+</mat-menu>
+
+<mat-menu #giaoTiep="matMenu">
+  <button mat-menu-item>Sơ cấp</button>
+  <button mat-menu-item>Trung Cấp</button>
+  <button mat-menu-item>Cao Cấp</button>
+</mat-menu>
+
+<button mat-button [matMenuTriggerFor]="thongTin">Thông tin</button>
+
+<mat-menu #thongTin="matMenu">
+  <button mat-menu-item>Tin tức</button>
+  <button mat-menu-item>Liên hệ</button>
+</mat-menu>
