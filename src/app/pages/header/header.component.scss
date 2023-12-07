@@ -10,6 +10,7 @@
   .Logo{
     img{
       object-fit: cover;
+      cursor: pointer;
     }
     p{
       position: initial;
@@ -33,7 +34,7 @@
     }
     .icon{
       background-color: #fff;
-      background-image: url(../../../../assets/img/icon-search.png);
+      background-image: url(../../../assets/img/icon-search.png);
       background-position: 50%;
       background-repeat: no-repeat;
       background-size: 18px;
