@@ -8,6 +8,7 @@ import { TitleMenuComponent } from './title-menu/title-menu.component';
 import { AppComponent } from '../app.component';
 import { MaterialModule } from '../material-module';
 import { HeaderComponent } from './header/header.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HeaderComponent } from './header/header.component';
     KhoaHocComponent,
     TitleMenuComponent,
     WrapperComponent,
-    HeaderComponent
+    HeaderComponent,
+    SideBarComponent
   ],
   imports: [
     MaterialModule,

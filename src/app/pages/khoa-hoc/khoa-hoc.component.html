@@ -1,5 +1,9 @@
-<app-header></app-header>
-<p>khoa-hoc works!</p>
-<a routerLink="/trang-chu" routerLinkActive="active" ariaCurrentWhenActive="page">ok</a>
+  <app-header></app-header>
 
-<a routerLink="/trang-chu/1" routerLinkActive="active" ariaCurrentWhenActive="page">1</a>
+<div class="col-md-12 row content">
+  <iframe  class="col-md-9 video" [src]="urlSafe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   <div class="col-md-3">
+     <app-side-bar></app-side-bar>
+   </div>
+</div>
+
