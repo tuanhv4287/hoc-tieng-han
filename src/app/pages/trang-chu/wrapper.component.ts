@@ -7,5 +7,4 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./wrapper.component.scss']
 })
 export class WrapperComponent {
-
 }

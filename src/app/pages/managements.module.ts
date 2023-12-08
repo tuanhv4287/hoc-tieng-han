@@ -1,4 +1,4 @@
-import { WrapperComponent } from './wrapper/wrapper.component';
+import { WrapperComponent } from './trang-chu/wrapper.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

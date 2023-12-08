@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WrapperComponent } from './wrapper/wrapper.component';
+import { WrapperComponent } from './trang-chu/wrapper.component';
 import { KhoaHocComponent } from './khoa-hoc/khoa-hoc.component';
 
 const routes: Routes = [

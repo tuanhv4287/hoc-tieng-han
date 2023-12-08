@@ -1,82 +1,69 @@
 import { Component } from '@angular/core';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-
+import { ArrayDataSource } from '@angular/cdk/collections';
+import { NestedTreeControl, CdkTreeModule } from '@angular/cdk/tree';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+interface FoodNode {
+  name: string;
+  children?: FoodNode[];
+}
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss']
 })
+
 export class SideBarComponent {
-  private _transformer = (node: FoodNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
+  treeControl = new NestedTreeControl<FoodNode>(node => node.children);
+  dataSource = new ArrayDataSource(TREE_DATA);
+
+  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+  changeVideo(value: string) {
+    if (value == '1. Bạn sẽ làm được gì sau khóa học?') {
+      console.log('true');
+
+    }
   }
-
-  treeControl = new FlatTreeControl<ExampleFlatNode>(
-      node => node.level, node => node.expandable);
-
-  treeFlattener = new MatTreeFlattener(
-      this._transformer, node => node.level, node => node.expandable, node => node.children);
-
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
-  constructor() {
-    this.dataSource.data = TREE_DATA;
-  }
-
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 }
 
-
-/**
- * Food data with nested structure.
- * Each node has a name and an optional list of children.
- */
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
 
 const TREE_DATA: FoodNode[] = [
   {
-    name: 'Fruit',
+    name: '1.Bắt đầu',
     children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
-    ]
-  }, {
-    name: 'Vegetables',
+      { name: '1. Bạn sẽ làm được gì sau khóa học?' },
+      { name: '2. Tìm hiểu về nguyên âm' },
+      { name: '3. Tìm hiểu về phụ âm' }],
+  },
+  {
+    name: '2.Làm quen với bảng chử cái',
     children: [
       {
-        name: 'Green',
-        children: [
-          {name: 'Broccoli'},
-          {name: 'Brussels sprouts'},
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          {name: 'Pumpkins'},
-          {name: 'Carrots'},
-        ]
+        name: '1.Chữ A',
       },
-    ]
+      {
+        name: '2.Chữ B',
+      },
+      {
+        name: '3.Chữ C',
+      },
+      {
+        name: '4.Chữ D',
+      },
+      {
+        name: '5.Chữ E',
+      },
+      {
+        name: '6.Chữ F',
+      },
+      {
+        name: '7.Chữ G',
+      },
+      {
+        name: '8.Chữ H',
+      }
+    ],
   },
 ];
 
-/** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
-}
-
-/**
- * @title Tree with flat nodes
- */
 

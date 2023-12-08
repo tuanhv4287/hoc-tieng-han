@@ -1,19 +1,19 @@
 <h2>Nội dung khóa học</h2>
-<!-- <a href="">Video 1 - A</a><br/> <br/>
-<a href="">Video 2 - B</a><br/> <br/>
-<a href="">Video 3 - C</a><br/> <br/>
-<a href="">Video 4 - D</a><br/> <br/> -->
-<ul>
-  <li>video 1</li>
-  <li>video 2</li>
-  <li>video 1</li>
-  <li>video 1</li>
-  <li>video 1</li>
-  <li>video 1</li>
-  <li>video 1</li>
-  <li>video 1</li>
-  <li>video 1</li>
-  <li>video 1</li>
-</ul>
-
-
+<div class="nav-list-menu">
+  <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="example-tree-node">
+      <p (click)="changeVideo(node.name)"> {{node.name}} <br /> <i> 02:30</i></p>
+    </cdk-nested-tree-node>
+    <cdk-nested-tree-node *cdkTreeNodeDef="let node; when: hasChild" class="example-tree-node">
+      <div class="backgoundTitle" [attr.aria-label]="'Toggle ' + node.name" cdkTreeNodeToggle>
+        {{node.name}}
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </div>
+      <div [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+        <ng-container cdkTreeNodeOutlet></ng-container>
+      </div>
+    </cdk-nested-tree-node>
+  </cdk-tree>
+</div>
