@@ -8,7 +8,10 @@
   box-shadow: 1px 1px 1px #AAA;
   padding: 5px 20px 5px;
   align-items: center;
-
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
   .Logo {
     img {
       object-fit: cover;

@@ -22,17 +22,11 @@
 
 }
 
-.mat-icon {
-  float: right;
-}
-
 .backgoundTitle {
   background-color: #efefef;
-  font-size: 22px;
   height: 3rem;
   cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -41,4 +35,9 @@
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: scroll;
+  i{
+    display: flex;
+    align-items: center;
+  }
+
 }

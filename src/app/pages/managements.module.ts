@@ -9,6 +9,7 @@ import { AppComponent } from '../app.component';
 import { MaterialModule } from '../material-module';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     TitleMenuComponent,
     WrapperComponent,
     HeaderComponent,
-    SideBarComponent
+    SideBarComponent,
+    FooterComponent
   ],
   imports: [
     MaterialModule,
