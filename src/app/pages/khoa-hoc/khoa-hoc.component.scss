@@ -1,13 +1,17 @@
 
 .content{
-  margin-top: 6rem;
+  margin: 0;
+  padding-top: 6rem;
   .video{
     min-height: 70vh;
     width: 100%;
     padding-bottom: 30px;
   }
-
   .title{
     font-size: 30px;
+  }
+  .boder-side-bar{
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
   }
 }

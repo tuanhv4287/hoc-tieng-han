@@ -100,6 +100,7 @@ export const MY_FORMATS_DATETIME = {
     OverlayModule,
     PortalModule,
     ScrollingModule,
+
   ],
   imports: [
 
