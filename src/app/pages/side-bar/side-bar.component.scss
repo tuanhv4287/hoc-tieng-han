@@ -1,0 +1,43 @@
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.example-tree-node {
+  display: block;
+}
+
+.example-tree-node .example-tree-node {
+  padding: 10px;
+  :hover {
+    cursor: pointer;
+    background-color: #f1eeee;
+  }
+
+}
+
+.backgoundTitle {
+  background-color: #efefef;
+  height: 3rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list-menu {
+  height: 700px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  i{
+    display: flex;
+    align-items: center;
+  }
+
+}

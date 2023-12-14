@@ -1,0 +1,18 @@
+.wrapper{
+  max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    background-color: aquamarine;
+  img{
+    background-size: contain;
+    width: 100%;
+  }
+  .content{
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+}
+.footer{
+height: 30px;
+}
