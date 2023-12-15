@@ -1,17 +1,37 @@
 .wrapper{
-  max-width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
     margin: 20px 0;
-    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   img{
     background-size: contain;
     width: 100%;
   }
   .content{
-    padding-bottom: 15px;
-    padding-top: 15px;
+    font-size: 17px;
+    text-align: justify;
+    div{
+    margin-bottom: 25px;
+    }
   }
+  .khoahoc-hr hr {
+    margin: 0px auto;
+    width: 200px;
+    border-top: 2px solid #bb141a;
+}
+}
+.thanh-acsion{
+  width: 100%;
+   margin: 0;
+   padding: 0;
+   background-color:#2234db;
+   height: 50px;
+   top: 0;
+   left: 0;
 }
 .footer{
 height: 30px;
