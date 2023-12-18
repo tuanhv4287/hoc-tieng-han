@@ -1,11 +1,14 @@
 
 .content{
   margin: 0;
-  padding-top: 6rem;
+  padding-top: var(--height-header-nav);
   .video{
     min-height: 70vh;
     width: 100%;
     padding-bottom: 30px;
+    @media(max-width:739px){
+      min-height: 35vh;
+    }
   }
   .title{
     font-size: 30px;

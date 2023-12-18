@@ -1,17 +1,20 @@
-<div class="nav-menu col-md-12 row">
-  <div class="Logo col-md-1">
-    <img routerLink="/home" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV56a8WHIw0NGgOfV6gbKdlinv3jG6MprcZg&usqp=CAU"
-      alt="Logo" width="70" height="auto">
-      Tiếng Hàn KOKIBIG
+<div class="nav-menu col-lg-12 col-md-12 row">
+  <div class="Logo col-lg-1 col-md-1 col-sm-2">
+    <img routerLink="/home" src="../../../assets/img/LogoKokibig.png" alt="Logo" width="50" height="auto">
   </div>
-  <div class=" col-md-3">
+  <div class="header2 col-md-3 col-sm-8">
     <app-title-menu></app-title-menu>
   </div>
-  <div class="search col-md-4 row">
+  <div class="d-lg-none d-md-none col-sm-2">
+    <!-- <i class="fas fa-search"></i> -->
+    <img src="../../../assets/img/icon-search.png" width="10" alt="">
+    <h5 routerLink="/khoa-hoc" routerLinkActive="active" ariaCurrentWhenActive="page" ><b>Khóa học của tôi</b></h5>
+  </div>
+  <div class="search col-lg-5 col-md-4 ">
     <div class="icon"></div>
     <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ...">
   </div>
-    <div class="user col-md-4">
+    <div class="user col-lg-3 col-md-4 ">
       <h5 routerLink="/khoa-hoc" routerLinkActive="active" ariaCurrentWhenActive="page" >Khóa học của tôi</h5>
     <mat-icon>account_box</mat-icon>
     <a href="">Đăng nhập/Đăng ký</a>

@@ -7,6 +7,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    margin-top: var(--height-header-nav);
+
   img{
     background-size: contain;
     width: 100%;
@@ -22,6 +24,9 @@
     margin: 0px auto;
     width: 200px;
     border-top: 2px solid #bb141a;
+}
+.khoahoc-video{
+    min-height: 18rem;
 }
 }
 .thanh-acsion{
