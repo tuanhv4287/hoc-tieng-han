@@ -1,4 +1,4 @@
-<button mat-button [matMenuTriggerFor]="khoaHoc">Khóa học</button>
+<!-- <button mat-button [matMenuTriggerFor]="khoaHoc">Khóa học</button>
 
 <mat-menu #khoaHoc="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="topikI">topik I</button>
@@ -36,9 +36,33 @@
 
 <button mat-button>Tin tức</button>
 
-<button mat-button>Liên hệ</button>
+<button mat-button>Liên hệ</button> 
 
-<!-- <mat-menu #thongTin="matMenu">
-  <button mat-menu-item>Tin tức</button>
-  <button mat-menu-item>Liên hệ</button>
-</mat-menu> -->
+ -->
+
+<nav>
+  <ul class="sidebar" #sidebar>
+    <li (click)="hideSidebar(sidebar)"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+          viewBox="0 -960 960 960" width="24">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+        </svg></a></li>
+    <li><a href="#">menu</a></li>
+    <li><a href="#">blog</a></li>
+    <li><a href="#">content</a></li>
+    <li><a href="#">about</a></li>
+    <li><a href="#">form</a></li>
+  </ul>
+  <ul>
+    <li class=" d-lg-none" (click)="showSidebar(sidebar)">
+      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </a>
+    </li>
+    <li class="d-none d-lg-block"><a href="#">menu</a></li>
+    <li class="d-none d-lg-block"><a href="#">blog</a></li>
+    <li class="d-none d-lg-block"><a href="#">content</a></li>
+    <li class="d-none d-lg-block"><a href="#">about</a></li>
+    <li class="d-none d-lg-block"><a href="#">form</a></li>
+  </ul>
+</nav>
