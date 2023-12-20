@@ -36,7 +36,7 @@ const TREE_DATA: FoodNode[] = [
       { name: '3. Tìm hiểu về phụ âm' }],
   },
   {
-    name: '2.Làm quen với bảng chử cái',
+    name: '2.Làm quen với bảng chữ cái',
     children: [
       {
         name: '1.Chữ A',

@@ -1,68 +1,22 @@
-<!-- <button mat-button [matMenuTriggerFor]="khoaHoc">Khóa học</button>
-
-<mat-menu #khoaHoc="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="topikI">topik I</button>
-  <button mat-menu-item [matMenuTriggerFor]="topikII">topik II</button>
-  <button mat-menu-item [matMenuTriggerFor]="nguPhap">Ngữ Pháp</button>
-  <button mat-menu-item [matMenuTriggerFor]="giaoTiep">Giao tiếp</button>
-  <button mat-menu-item>Luyện thi Visa</button>
-</mat-menu>
-
-<mat-menu #topikI="matMenu">
-  <button mat-menu-item>Cấp 1</button>
-  <button mat-menu-item>Cấp 2</button>
-</mat-menu>
-
-<mat-menu #topikII="matMenu">
-  <button mat-menu-item>Cấp 3</button>
-  <button mat-menu-item>Cấp 4</button>
-  <button mat-menu-item>Cấp 5</button>
-  <button mat-menu-item>Cấp 6</button>
-</mat-menu>
-
-<mat-menu #nguPhap="matMenu">
-  <button mat-menu-item>Sơ cấp</button>
-  <button mat-menu-item>Trung Cấp</button>
-  <button mat-menu-item>Cao Cấp</button>
-</mat-menu>
-
-<mat-menu #giaoTiep="matMenu">
-  <button mat-menu-item>Sơ cấp</button>
-  <button mat-menu-item>Trung Cấp</button>
-  <button mat-menu-item>Cao Cấp</button>
-</mat-menu>
-
-<button mat-button>Thông tin</button>
-
-<button mat-button>Tin tức</button>
-
-<button mat-button>Liên hệ</button> 
-
- -->
-
 <nav>
-  <ul class="sidebar" #sidebar>
-    <li (click)="hideSidebar(sidebar)"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24"
-          viewBox="0 -960 960 960" width="24">
-          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-        </svg></a></li>
-    <li><a href="#">menu</a></li>
-    <li><a href="#">blog</a></li>
-    <li><a href="#">content</a></li>
-    <li><a href="#">about</a></li>
-    <li><a href="#">form</a></li>
+  <ul (click)="hideSidebar(sidebar)" class="sidebar" #sidebar>
+    <li><a href="/home">Trang chủ</a></li>
+    <li><a href="#">Khóa học</a></li>
+    <li><a href="#">Giáo trình</a></li>
+    <li><a href="#">Cộng đồng</a></li>
+    <li><a href="#">Hỗ trợ</a></li>
   </ul>
   <ul>
     <li class=" d-lg-none" (click)="showSidebar(sidebar)">
-      <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+      <a><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
           <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
         </svg>
       </a>
     </li>
-    <li class="d-none d-lg-block"><a href="#">menu</a></li>
-    <li class="d-none d-lg-block"><a href="#">blog</a></li>
-    <li class="d-none d-lg-block"><a href="#">content</a></li>
-    <li class="d-none d-lg-block"><a href="#">about</a></li>
-    <li class="d-none d-lg-block"><a href="#">form</a></li>
+    <li class="d-none d-lg-block"><a href="/home">Trang chủ</a></li>
+    <li class="d-none d-lg-block"><a href="#">Khóa học</a></li>
+    <li class="d-none d-lg-block"><a href="#">Giáo trình</a></li>
+    <li class="d-none d-lg-block"><a href="#">Cộng đồng</a></li>
+    <li class="d-none d-lg-block"><a href="#">Hỗ trợ</a></li>
   </ul>
 </nav>

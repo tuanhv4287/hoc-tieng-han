@@ -16,9 +16,9 @@
   background-color: #fff;
   z-index: 10;
   height: var(--height-header-nav);
+  font-weight: 500;
 
   .header-Logo {
-
     img {
       object-fit: cover;
       cursor: pointer;
@@ -37,11 +37,6 @@
     padding: 0 16px 0 8px;
     transition: border-color .2s ease-in-out;
     width: 420px;
-
-
-    @media(max-width: 768px) {
-      display: none;
-    }
 
     input {
       border: none;
@@ -64,27 +59,109 @@
       transition: opacity .2s ease-in-out;
       width: 30px;
     }
+
+
+    .search:focus-within {
+      border: 2px solid black;
+    }
+
   }
 
-  .search:focus-within {
-    border: 2px solid black;
-  }
-
-
-
-  .user {
+  .header-user {
+    padding-right: 5px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    @media(max-width:767px) {
-      display: none;
+    h5 {
+      cursor: pointer;
+      margin: 0;
+      padding-right: 10px;
+      font-size: 14px;
+      font-weight: 500;
     }
 
-    h5 {
-      padding-right: 15px;
-      cursor: pointer;
-      padding-top: 10px;
+    h5:hover {
+      color: var(--hover-color);
     }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .header-search {
+      height: 80%;
+      width: 80%;
+      flex: none;
+
+      .icon {
+        height: 18px;
+      }
+
+      input {
+        padding: 0px 2px;
+        font-size: 12px;
+      }
+    }
+
+    .header-Logo {
+      order: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-sidebar {
+      order: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .header-user {
+      order: 3;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 12px;
+
+      h5 {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .search-mini {
+    height: 100%;
+    padding: 0 1rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--black-color);
+
+    li {
+      height: 50px;
+    }
+
+  }
+
+  .search-mini:hover {
+    background-color: #218cff2b;
+    color: var(--hover-color);
+    border-radius: 0.5rem;
+  }
+
+  .box-search {
+    position: fixed;
+    top: 0;
+    height: 30px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #ffffff;
+    box-shadow: 3px 6px 5px rgba(0, 0, 0, 0.1);
+    margin-top: var(--height-header-nav);
+    border: 1px 1px solid black;
+    border-top: 1px solid #f7f2f2;
   }
 }

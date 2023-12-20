@@ -67,8 +67,9 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #f0f0f0;
-
+  background-color: #218cff2b;
+  color: var(--hover-color);
+  border-radius: 0.5rem;
 }
 
 nav li:first-child {
@@ -81,18 +82,20 @@ nav .sidebar {
   height: auto;
   width: 250px;
   z-index: 999;
-  // background-color: var(--white-color);
+  background-color: var(--white-color);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  backdrop-filter: blur(10px);
-
+  // backdrop-filter: blur(10px);
+  margin-top: var(--height-header-nav);
 }
 
 .sidebar li {
   width: 100%;
+
+
 }
 
 .sidebar a {

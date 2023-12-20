@@ -1,23 +1,38 @@
 <div class="nav-menu col-lg-12 col-md-12 row">
-  <div class="header-Logo col-lg-1 col-md-1 col-sm-2 ">
+  <div class="header-Logo col-lg-1 col-md-1 col-2 ">
     <img routerLink="/home" src="https://drive.google.com/uc?export=download&id=1JkHC_JtO22NKBCnY1t3K93yCzyO4BCmu"
       alt="Logo" width="50" height="auto">
   </div>
-  <div class="header-sidebar col-md-1 col-sm-2 col-lg-4 ">
+  <div class="header-sidebar col-md-2 col-4 col-lg-4 ">
     <app-title-menu></app-title-menu>
+    <div class="search-mini d-md-none">
+      <li (click)="showSearch(search)">
+        <a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="24px" height="24px">
+            <path
+              d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+          </svg>
+        </a>
+      </li>
+      <div class="box-search" #search>
+        <div class="header-search">
+          <div class="icon"></div>
+          <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ...">
+
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="d-lg-none d-md-none col-sm-2">
-    <!-- <i class="fas fa-search"></i> -->
-    <img src="https://drive.google.com/uc?export=download&id=12n0tvIl6Y9am-vxQVNumeVQfNEdgvgCd" width="10" alt="">
-    <h5 routerLink="/khoa-hoc" routerLinkActive="active" ariaCurrentWhenActive="page"><b>Khóa học của tôi</b></h5>
-  </div>
-  <div class="header-search col-lg-4 col-md-5  ">
+
+  <div class="header-search d-none d-md-flex col-md-7 ">
     <div class="icon"></div>
     <input type="text" placeholder="Tìm kiếm khóa học, bài viết, video, ...">
   </div>
-  <div class="user col-lg-3 col-md-3 ">
+
+  <div class="header-user col-lg-3 col-md-2 col-4">
     <h5 routerLink="/khoa-hoc" routerLinkActive="active" ariaCurrentWhenActive="page">Khóa học của tôi</h5>
-    <mat-icon>account_box</mat-icon>
-    <a href="">Đăng nhập/Đăng ký</a>
+    <div class=" d-none d-lg-flex">
+      <mat-icon>account_box</mat-icon>
+      <a href="">Đăng nhập/Đăng ký</a>
+    </div>
   </div>
 </div>
