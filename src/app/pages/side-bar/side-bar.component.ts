@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { ArrayDataSource } from '@angular/cdk/collections';
 import { NestedTreeControl, CdkTreeModule } from '@angular/cdk/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-interface FoodNode {
+import { isIdentifier } from '@angular/compiler';
+interface ListNode {
   name: string;
-  children?: FoodNode[];
+  children?: ListNode[];
 }
 @Component({
   selector: 'app-side-bar',
@@ -13,33 +14,67 @@ interface FoodNode {
   styleUrls: ['./side-bar.component.scss']
 })
 
-export class SideBarComponent {
-  treeControl = new NestedTreeControl<FoodNode>(node => node.children);
+export class SideBarComponent implements OnChanges {
+  link: string = '';
+  @Output() linkVideo: EventEmitter<any> = new EventEmitter();
+  @Output() idVideo: EventEmitter<any> = new EventEmitter();
+  @Input() item!: string
+  treeControl = new NestedTreeControl<ListNode>(node => node.children);
   dataSource = new ArrayDataSource(TREE_DATA);
 
-  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+  hasChild = (_: number, node: ListNode) => !!node.children && node.children.length > 0;
+  ngOnChanges(changes: SimpleChanges): void {
+    this.changeVideo('value')
+    console.log(changes);
+
+  }
+
   changeVideo(value: string) {
     if (value == '1. Bạn sẽ làm được gì sau khóa học?') {
-      console.log('true');
-
+      this.idVideo.emit(0);
+      this.linkVideo.emit(value);
     }
+    else if (value == '2. Nguyên âm đơn bài 1') {
+      this.idVideo.emit(1);
+      this.linkVideo.emit(value);
+    }
+    else if (value == '3. Nguyên âm đơn bài 2') {
+      this.idVideo.emit(2);
+      this.linkVideo.emit(value);
+    }
+    else if (value == '4. Nguyên âm đơn bài 3') {
+      this.idVideo.emit(3);
+      this.linkVideo.emit(value);
+    }
+    else if (value == '5. Nguyên âm đơn bài 4') {
+      this.idVideo.emit(4);
+      this.linkVideo.emit(value);
+    }
+    else if (value == '6. Nguyên âm đơn bài 5') {
+      this.idVideo.emit(5);
+      this.linkVideo.emit(value);
+    }
+
   }
 }
 
-
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: ListNode[] = [
   {
     name: '1.Bắt đầu',
     children: [
       { name: '1. Bạn sẽ làm được gì sau khóa học?' },
-      { name: '2. Tìm hiểu về nguyên âm' },
-      { name: '3. Tìm hiểu về phụ âm' }],
+      { name: '2. Nguyên âm đơn bài 1' },
+      { name: '3. Nguyên âm đơn bài 2' },
+      { name: '4. Nguyên âm đơn bài 3' },
+      { name: '5. Nguyên âm đơn bài 4' },
+      { name: '6. Nguyên âm đơn bài 5' },],
   },
   {
     name: '2.Làm quen với bảng chữ cái',
     children: [
       {
         name: '1.Chữ A',
+
       },
       {
         name: '2.Chữ B',

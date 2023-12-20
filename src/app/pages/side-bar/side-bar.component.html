@@ -2,11 +2,13 @@
 <div class="nav-list-menu">
   <cdk-tree [dataSource]="dataSource" [treeControl]="treeControl">
     <cdk-nested-tree-node *cdkTreeNodeDef="let node" class="example-tree-node">
-      <p (click)="changeVideo(node.name)"> {{node.name}} <br/> <i><mat-icon>play_circle_outline</mat-icon> 02:30</i></p>
+      <p (click)="changeVideo(node.name)"> {{node.name}} <br /> <i><mat-icon>play_circle_outline</mat-icon>
+          02:30</i>
+      </p>
     </cdk-nested-tree-node>
     <cdk-nested-tree-node *cdkTreeNodeDef="let node; when: hasChild" class="example-tree-node">
       <div class="backgoundTitle" [attr.aria-label]="'Toggle ' + node.name" cdkTreeNodeToggle>
-        <div class=" title" >
+        <div class=" title">
           <h3 class="m-0 p-0"> <b>{{node.name}}</b></h3>
           <p><i>{{"1/3 | 07:30"}}</i></p>
         </div>

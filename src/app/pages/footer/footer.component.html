@@ -1,7 +1,10 @@
-
 <section class="footer">
   <div class="example-button-row">
-    <button mat-raised-button color="primary">< Bài trước</button>
-    <button mat-raised-button color="primary">Bài tiếp theo ></button>
+    <button (click)="previous()" style="
+    margin-right: 15px;">
+      < Bài trước </button>
+        <button (click)="next()">Bài tiếp theo >
+
+        </button>
   </div>
 </section>

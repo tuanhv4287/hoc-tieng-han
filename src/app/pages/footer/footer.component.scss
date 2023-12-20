@@ -13,6 +13,16 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 7px 0px;
+
+  button {
+    padding: 5px 20px;
+    margin: 0px 8px;
+    background-color: green;
+    color: white;
+    border-radius: 36px;
+    border: none;
+  }
 }
 
 .example-button-row .mat-mdc-button-base {
@@ -30,10 +40,11 @@ section {
   justify-content: center;
   width: 120px;
 }
-.footer{
+
+.footer {
   background-color: #ffffff;
   text-align: center;
-  padding: 1em;
+  padding-bottom: 0.3rem;
   position: fixed;
   bottom: 0;
   width: 100%;
