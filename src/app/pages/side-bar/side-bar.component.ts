@@ -18,6 +18,7 @@ export class SideBarComponent implements OnChanges {
   link: string = '';
   @Output() linkVideo: EventEmitter<any> = new EventEmitter();
   @Output() idVideo: EventEmitter<any> = new EventEmitter();
+  @Output() eventclose: EventEmitter<any> = new EventEmitter();
   @Input() item!: string
   treeControl = new NestedTreeControl<ListNode>(node => node.children);
   dataSource = new ArrayDataSource(TREE_DATA);
@@ -55,6 +56,9 @@ export class SideBarComponent implements OnChanges {
       this.linkVideo.emit(value);
     }
 
+  }
+  hideMenuOnMobile() {
+    this.eventclose.emit(true);
   }
 }
 

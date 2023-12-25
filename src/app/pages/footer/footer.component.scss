@@ -25,6 +25,51 @@ section {
   }
 }
 
+.footer {
+  margin: 0;
+  padding: 0;
+  height: 3rem;
+}
+
+.footer-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  li {
+    list-style: none;
+  }
+
+  h5 {
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+
+}
+
+
+
+@media (max-width:768px) {
+  .example-button-row {
+    justify-content: flex-end;
+    padding: 6px 12px;
+    margin: 0;
+  }
+
+  .footer-button {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width:576px) {
+  .example-button-row {
+    padding: 4px 6px;
+    margin: 0;
+    border-radius: 14px;
+  }
+}
+
 .example-button-row .mat-mdc-button-base {
   margin: 8px 8px 8px 0;
 }

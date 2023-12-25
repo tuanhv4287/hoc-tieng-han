@@ -15,6 +15,7 @@
 
 .example-tree-node .example-tree-node {
   padding: 10px;
+
   :hover {
     cursor: pointer;
     background-color: #f1eeee;
@@ -31,13 +32,42 @@
 }
 
 .nav-list-menu {
-  height: 610px;
+  height: 80vh;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: scroll;
-  i{
+
+  i {
     display: flex;
     align-items: center;
   }
 
+  @media (max-width:1000px) {
+    height: 100%;
+    padding: 0px 15px 30px 15px;
+  }
+
+
+}
+
+@media (max-width:1000px) {
+  .title-side-bar {
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+
+    .nav-list-menu {
+      height: auto;
+      padding: 0px 15px 30px 15px;
+    }
+  }
 }

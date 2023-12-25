@@ -1,16 +1,30 @@
 <app-header></app-header>
-<div class="container-fluid">
-  <div class="col-md-12 row content">
-    <div class="col-md-9 col-sm-12">
-      <h3 class="title d-md-none d-lg-none" style="margin-top: 2rem;">{{title}}</h3>
-      <iframe class="video" [src]="urlSafe" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-      <h3 class="title d-none d-md-flex">{{title}}</h3>
+<div class="col-md-12 row content">
+  <div class="col-lg-9 col-12 p-0">
+    <iframe class="video" [src]="urlSafe" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    <div class="describe">
+      <h5 class="title d-md-flex">{{title}}</h5>
+      <h5>
+        Tham gia nhóm Học tiếng hàn tại Tiếng hàn KoKiBig trên Facebook để cùng nhau trao đổi trong quá trình học tập
+        ❤️
+        <br />
+
+        Các bạn subscribe kênh Tiếng hàn KoKiBig để nhận thông báo khi có các bài học mới nhé ❤️
+      </h5>
     </div>
-    <div class="col-md-3 boder-side-bar">
-      <app-side-bar (idVideo)="addItem($event)" (linkVideo)="setNameTitle($event)" [item]="change"></app-side-bar>
+  </div>
+  <div class="d-none d-lg-block col-md-3 boder-side-bar">
+    <app-side-bar (idVideo)="addItem($event)" (linkVideo)="setNameTitle($event)"></app-side-bar>
+  </div>
+</div>
+<app-footer (eventShowMenu)="showMenu(footerMenu)" (event)="changeEvent($event)"></app-footer>
+<div class="footer-nav-menu1" #footerMenu>
+  <div class="footer-nav-menu">
+    <div class="box-nav-menu">
+      <app-side-bar (eventclose)="hideFooterMenu(footerMenu)" (idVideo)="addItem($event)"
+        (linkVideo)="setNameTitle($event)"></app-side-bar>
     </div>
   </div>
 </div>
-<app-footer (event)="changeEvent($event)"></app-footer>

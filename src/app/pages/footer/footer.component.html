@@ -1,10 +1,28 @@
 <section class="footer">
+  <!-- <div class="footer-nav-menu">
+    <div class="box-nav-menu">
+      <app-side-bar></app-side-bar>
+    </div>
+  </div> -->
   <div class="example-button-row">
-    <button (click)="previous()" style="
-    margin-right: 15px;">
-      < Bài trước </button>
-        <button (click)="next()">Bài tiếp theo >
 
-        </button>
+    <div class="footer-menu col-2 col-sm-6 d-lg-none">
+      <li class=" ">
+        <a><svg (click)="showFooterMenu()" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960"
+            width="24">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg>
+        </a>
+      </li>
+      <h5 class="d-none d-sm-flex">1. Bạn sẽ làm được gì sau khóa học?</h5>
+    </div>
+
+    <div class="footer-button col-10 col-sm-6">
+      <button (click)="previous()" style="
+      margin-right: 10px;">
+        < Bài trước </button>
+          <button (click)="next()">Bài tiếp theo >
+          </button>
+    </div>
   </div>
 </section>
