@@ -1,53 +1,89 @@
 <app-header></app-header>
+<div class="col-md-12 slider">
+  <div class="slide" [ngStyle]="{'background-image': getCurrentSlideUrl()}">
+    <div class="leftArrow" (click)="goToPrevious()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+        <title>91-Arrow Left</title>
+        <g id="_91-Arrow_Left" data-name="91-Arrow Left">
+          <path d="M16,32A16,16,0,1,1,32,16,16,16,0,0,1,16,32ZM16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z" />
+          <path d="M18.29,24.71l-8-8a1,1,0,0,1,0-1.41l8-8,1.41,1.41L12.41,16l7.29,7.29Z" />
+        </g>
+      </svg>
+    </div>
+    <div class="rightArrow" (click)="goToNext()">
+      <svg version="1.1" id="icons_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 128 128"
+        style="enable-background:new 0 0 128 128" xml:space="preserve">
+        <style>
+          .st0 {
+            display: none
+          }
+
+          .st1 {
+            display: inline
+          }
+
+          .st2 {
+            fill: #0a0a0a
+          }
+        </style>
+        <g id="row1_1_">
+          <g id="_x31__3_">
+            <path class="st2"
+              d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 121.6C32.2 121.6 6.4 95.8 6.4 64S32.2 6.4 64 6.4s57.6 25.8 57.6 57.6-25.8 57.6-57.6 57.6zM49.2 38.4 73.6 64 49.2 89.6h13.5L86.4 64 62.7 38.4H49.2z"
+              id="_x32__2_" />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="dotsContainer">
+    <div *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">
+
+    </div>
+  </div>
+</div>
 <div class=" container-fluid wrapper">
-  <div class="col-md-12 row content ">
-    <div class="col-md-12 ">
-      <img src="https://drive.google.com/uc?export=download&id=1RRMP3VuCpL2YlfGwjz7-3uY9iJm6CdZI" alt=""
-        class="mx-auto d-block" style="width:50%">
-    </div>
-    <div class="content">
-      <div class="container">
-        <div class="col-md-12 row">
-          <div class="col-md-7 col-sm-12">
-            <h2>
-              HỌC TIẾNG HÀN TẠI KOKIBIG
-            </h2>
-            <div class="khoahoc-hr">
-              <hr style="margin:0px ">
-            </div>
-            <p>
-              Đây là một khóa học tiếng Hàn cho người mới bắt đầu, bao gồm giới thiệu về ngữ âm và cách diễn đạt hàng
-              ngày.
-              Sau khi tham gia khóa học này, học viên có thể hiểu cơ bản tiếng Hàn Quốc và thực hiện các cuộc trò chuyện
-              cơ bản về cuộc sống hàng ngày như trao đổi thông tin cá nhân, nói về lịch trình, hỏi về giá cả, giới thiệu
-              thành phố và thời tiết, nói về sở thích,…
-            </p>
-          </div>
-          <div class="khoahoc-video col-md-5 col-sm-12">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Pa7mHxV72iY?si=8voM3XDfote7dl3"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
+  <div class="content">
+
+    <div class="col-md-12 row">
+      <div class="col-md-7 col-sm-12">
+        <h2>
+          HỌC TIẾNG HÀN TẠI KOKIBIG
+        </h2>
+        <div class="khoahoc-hr">
+          <hr style="margin:0px ">
         </div>
+        <p>
+          Đây là một khóa học tiếng Hàn cho người mới bắt đầu, bao gồm giới thiệu về ngữ âm và cách diễn đạt hàng
+          ngày.
+          Sau khi tham gia khóa học này, học viên có thể hiểu cơ bản tiếng Hàn Quốc và thực hiện các cuộc trò
+          chuyện
+          cơ bản về cuộc sống hàng ngày như trao đổi thông tin cá nhân, nói về lịch trình, hỏi về giá cả, giới
+          thiệu
+          thành phố và thời tiết, nói về sở thích,…
+        </p>
       </div>
-      <!-- <div class="col-md-12 thanh-acsion">
-      </div> -->
-      <div class="col-md-12 row">
-        <div class="col-md-12">
-          <h3>
-            Bạn muốn học tiếng Hàn? Thời gian rảnh muốn học online mà lại sợ tốn kém, sợ không đủ chất lượng?
-            Vậy thì khóa học tiếng Hàn Online miễn phí kéo dài 7 tuần của Tiếng Hàn KOKIBIG sẽ đồng hành cùng bạn.
-          </h3>
-          <p> Sự đặc biệt của khóa học này nằm ở chỗ:</p>
-          <h3>✔ HOÀN TOÀN MIỄN PHÍ.<br /><br />
-            ✔ VIDEO NGẮN có BÀI TẬP giúp ta có thể dễ dàng theo dõi & dễ học.<br /><br />
-            ✔ THẢO LUẬN trên diễn đàn để học viên có thể trao đổi với giáo viên và các bạn học khác.</h3>
-        </div>
+      <div class="khoahoc-video col-md-5 col-sm-12">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Pa7mHxV72iY?si=8voM3XDfote7dl3"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </div>
-
-
+    <!-- <div class="col-md-12 thanh-acsion">
+        </div> -->
+    <div class="col-md-12 row">
+      <div class="col-md-12">
+        <h3>
+          Bạn muốn học tiếng Hàn? Thời gian rảnh muốn học online mà lại sợ tốn kém, sợ không đủ chất lượng?
+          Vậy thì khóa học tiếng Hàn Online miễn phí kéo dài 7 tuần của Tiếng Hàn KOKIBIG sẽ đồng hành cùng bạn.
+        </h3>
+        <p> Sự đặc biệt của khóa học này nằm ở chỗ:</p>
+        <h3>✔ HOÀN TOÀN MIỄN PHÍ.<br /><br />
+          ✔ VIDEO NGẮN có BÀI TẬP giúp ta có thể dễ dàng theo dõi & dễ học.<br /><br />
+          ✔ THẢO LUẬN trên diễn đàn để học viên có thể trao đổi với giáo viên và các bạn học khác.</h3>
+      </div>
+    </div>
   </div>
 </div>
 

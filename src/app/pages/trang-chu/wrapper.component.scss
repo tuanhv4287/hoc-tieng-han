@@ -1,43 +1,120 @@
-.wrapper{
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    margin-top: var(--height-header-nav);
+.wrapper {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: var(--height-header-nav);
 
-  img{
+  img {
     background-size: contain;
     width: 100%;
   }
-  .content{
+
+  .content {
     font-size: 17px;
     text-align: justify;
-    div{
-    margin-bottom: 25px;
+
+    div {
+      margin-bottom: 25px;
     }
   }
+
   .khoahoc-hr hr {
     margin: 0px auto;
     width: 200px;
     border-top: 2px solid #bb141a;
-}
-.khoahoc-video{
+  }
+
+  .khoahoc-video {
     min-height: 18rem;
+  }
 }
-}
-.thanh-acsion{
+
+.thanh-acsion {
   width: 100%;
-   margin: 0;
-   padding: 0;
-   background-color:#2234db;
-   height: 50px;
-   top: 0;
-   left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #2234db;
+  height: 50px;
+  top: 0;
+  left: 0;
 }
-.footer{
-height: 30px;
+
+.footer {
+  height: 30px;
+}
+
+.leftArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+
+}
+
+.rightArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  color: aliceblue;
+}
+
+.dot {
+  width: 52px;
+  height: 5px;
+  background-color: #6c757d;
+  cursor: pointer;
+  border-radius: 100px;
+  margin-right: 10px;
+
+  @media(max-width:1000px) {
+    width: 45px;
+  }
+
+  @media(max-width:508px) {
+    width: 30px;
+  }
+}
+
+.dotsContainer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.slide {
+  position: relative;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80%;
+  min-height: 600px;
+
+  @media(max-width:1000px) {
+    min-height: 300px;
+  }
+
+  @media(max-width:508px) {
+    min-height: 200px;
+    width: 100%;
+  }
+}
+
+.slider {
+  padding-top: var(--height-header-nav);
+
+  @media(max-width:508px) {
+    padding: var(--height-header-nav) 0px 0px 0px;
+  }
 }
