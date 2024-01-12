@@ -1,30 +1,108 @@
 <app-header></app-header>
-<div class="col-md-12 row content">
-  <div class="col-lg-9 col-12 p-0">
-    <iframe class="video" [src]="urlSafe" title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
-    <div class="describe">
-      <h5 class="title d-md-flex">{{title}}</h5>
-      <h5>
-        Tham gia nhóm Học tiếng hàn tại Tiếng hàn KoKiBig trên Facebook để cùng nhau trao đổi trong quá trình học tập
-        ❤️
-        <br />
 
-        Các bạn subscribe kênh Tiếng hàn KoKiBig để nhận thông báo khi có các bài học mới nhé ❤️
-      </h5>
+<div class="khoa-hoc">
+    <h1>Khóa học Tiếng Hàn</h1>
+    <h2 class="title">
+        Các khóa học để bạn bắt đầu</h2>
+    <ul>
+        <li><a href="#">Phổ biển nhất</a></li>
+        <li><a href="#">Mới</a></li>
+        <li><a href="#">Thịnh hành</a></li>
+    </ul>
+    <div class="List-khoa-hoc   ">
+        <div class="leftArrow" (click)="goToPrevious()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <title>91-Arrow Left</title>
+              <g id="_91-Arrow_Left" data-name="91-Arrow Left">
+                <path d="M16,32A16,16,0,1,1,32,16,16,16,0,0,1,16,32ZM16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z" />
+                <path d="M18.29,24.71l-8-8a1,1,0,0,1,0-1.41l8-8,1.41,1.41L12.41,16l7.29,7.29Z" />
+              </g>
+            </svg>
+          </div>
+          <div class="rightArrow" (click)="goToNext()">
+            <svg version="1.1" id="icons_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 128 128"
+              style="enable-background:new 0 0 128 128" xml:space="preserve">
+              <style>
+                .st0 {
+                  display: none
+                }
+      
+                .st1 {
+                  display: inline
+                }
+      
+                .st2 {
+                  fill: #0a0a0a
+                }
+              </style>
+              <g id="row1_1_">
+                <g id="_x31__3_">
+                  <path class="st2"
+                    d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 121.6C32.2 121.6 6.4 95.8 6.4 64S32.2 6.4 64 6.4s57.6 25.8 57.6 57.6-25.8 57.6-57.6 57.6zM49.2 38.4 73.6 64 49.2 89.6h13.5L86.4 64 62.7 38.4H49.2z"
+                    id="_x32__2_" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        
+        <div class="Item col-6 col-sm-3 col-md-4 ">
+            <img src="../../../assets/img/bannerTiengHanOnline.jpg" alt="">
+            <h3>Khóa học Basic từ cơ bản đến nâng cao</h3>
+            <h4><b>250.000 đ </b> <del style="color: rgb(78, 78, 78);">500.000 đ</del></h4>
+
+        </div>
+        <div class="Item col-6 col-sm-3 col-md-4 ">
+            <img src="../../../assets/img/bannerTiengHanOnline.jpg" alt="">
+            <h3>Khóa học Basic từ cơ bản đến nâng cao</h3>
+            <h4><b>250.000 đ </b> <del style="color: rgb(78, 78, 78);">500.000 đ</del></h4>
+
+        </div>
+        <div class="Item col-6 col-sm-3 col-md-4 ">
+            <img src="../../../assets/img/bannerTiengHanOnline.jpg" alt="">
+            <h3>Khóa học Basic từ cơ bản đến nâng cao</h3>
+            <h4><b>250.000 đ </b> <del style="color: rgb(78, 78, 78);">500.000 đ</del></h4>
+
+        </div>
+       
+        <!-- <div class="col-md-12 slider">
+            <div class="slide" [ngStyle]="{'background-image': getCurrentSlideUrl()}">
+              <div class="leftArrow" (click)="goToPrevious()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                  <title>91-Arrow Left</title>
+                  <g id="_91-Arrow_Left" data-name="91-Arrow Left">
+                    <path d="M16,32A16,16,0,1,1,32,16,16,16,0,0,1,16,32ZM16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Z" />
+                    <path d="M18.29,24.71l-8-8a1,1,0,0,1,0-1.41l8-8,1.41,1.41L12.41,16l7.29,7.29Z" />
+                  </g>
+                </svg>
+              </div>
+              <div class="rightArrow" (click)="goToNext()">
+                <svg version="1.1" id="icons_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 128 128"
+                  style="enable-background:new 0 0 128 128" xml:space="preserve">
+                  <style>
+                    .st0 {
+                      display: none
+                    }
+          
+                    .st1 {
+                      display: inline
+                    }
+          
+                    .st2 {
+                      fill: #0a0a0a
+                    }
+                  </style>
+                  <g id="row1_1_">
+                    <g id="_x31__3_">
+                      <path class="st2"
+                        d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64 64-28.7 64-64S99.3 0 64 0zm0 121.6C32.2 121.6 6.4 95.8 6.4 64S32.2 6.4 64 6.4s57.6 25.8 57.6 57.6-25.8 57.6-57.6 57.6zM49.2 38.4 73.6 64 49.2 89.6h13.5L86.4 64 62.7 38.4H49.2z"
+                        id="_x32__2_" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            
+          </div> -->
+          
     </div>
-  </div>
-  <div class="d-none d-lg-block col-md-3 boder-side-bar">
-    <app-side-bar (idVideo)="addItem($event)" (linkVideo)="setNameTitle($event)"></app-side-bar>
-  </div>
-</div>
-<app-footer (eventShowMenu)="showMenu(footerMenu)" (event)="changeEvent($event)"></app-footer>
-<div class="footer-nav-menu1" #footerMenu>
-  <div class="footer-nav-menu">
-    <div class="box-nav-menu">
-      <app-side-bar (eventclose)="hideFooterMenu(footerMenu)" (idVideo)="addItem($event)"
-        (linkVideo)="setNameTitle($event)"></app-side-bar>
-    </div>
-  </div>
 </div>

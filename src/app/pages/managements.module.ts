@@ -10,6 +10,7 @@ import { MaterialModule } from '../material-module';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { KhoaHocDangChonComponent } from './khoa-hoc/khoa-hoc-dang-chon/khoa-hoc-dang-chon.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     WrapperComponent,
     HeaderComponent,
     SideBarComponent,
-    FooterComponent
+    FooterComponent,
+    KhoaHocDangChonComponent
   ],
   imports: [
     MaterialModule,

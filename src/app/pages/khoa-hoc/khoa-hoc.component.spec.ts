@@ -1,20 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KhoaHocComponent } from './khoa-hoc.component';
+import { KhoaHocComponentComponent } from './khoa-hoc-component.component';
 
-describe('KhoaHocComponent', () => {
-  let component: KhoaHocComponent;
-  let fixture: ComponentFixture<KhoaHocComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ KhoaHocComponent ]
-    })
-    .compileComponents();
-  });
+describe('KhoaHocComponentComponent', () => {
+  let component: KhoaHocComponentComponent;
+  let fixture: ComponentFixture<KhoaHocComponentComponent>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(KhoaHocComponent);
+    TestBed.configureTestingModule({
+      declarations: [KhoaHocComponentComponent]
+    });
+    fixture = TestBed.createComponent(KhoaHocComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
