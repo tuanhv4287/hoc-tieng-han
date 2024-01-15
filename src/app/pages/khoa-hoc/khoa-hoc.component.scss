@@ -3,28 +3,12 @@
     padding-left: 20px;
     padding-right: 20px;
 }
-.List-khoa-hoc {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+
+.img-slide{
+  background-size: cover;
+  height: 100%;
+  width: 580px;
 }
-
-.Item {
-    width: 300px;
-    height: 150px;
-    // border: 1px solid black;
-padding: 0;
-    z-index: -1;
-    img{
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-    }
-
-}
-
 ul {
     display: flex;
 }
@@ -34,58 +18,10 @@ li{
         color: black;
     }
 }
-
-  
-  
   .footer {
     height: 30px;
   }
   
-  .leftArrow {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 0rem;
-    transform: translateX(-50%) translateY(-50%);
-    width: 40px;
-    height: 40px;
   
-  }
+
   
-  .rightArrow {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateX(50%) translateY(-50%);
-    right: 0rem;
-    width: 40px;
-    height: 40px;
-    color: aliceblue;
-  }
-  
-  
-  .slide {
-    position: relative;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 80%;
-    min-height: 600px;
-  
-    @media(max-width:1000px) {
-      min-height: 300px;
-    }
-  
-    @media(max-width:508px) {
-      min-height: 200px;
-      width: 100%;
-    }
-  }
-  
-  .slider {
-    padding-top: var(--height-header-nav);
-  
-    @media(max-width:508px) {
-      padding: var(--height-header-nav) 0px 0px 0px;
-    }
-  }
