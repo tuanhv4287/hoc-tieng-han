@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <form action="" id="form-login" >
+        <div class="form-heading ">
+        Đăng nhập
+        </div>
+        <div class="form-group">
+            <div class="form-group-input">
+                <mat-icon>person</mat-icon>
+                <input class="form-input" formControlName="userName" type="text" placeholder="Tài khoản">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-group-input">
+                <mat-icon>vpn_key</mat-icon>
+                <input class="form-input" formControlName="password" type="password" placeholder="Mật khẩu " #Password>
+                <div id="eye">
+                    <mat-icon (click)="eyeClick(Password)">{{ Password.type == 'password' ? 'visibility':
+                        'visibility_off'}}
+                    </mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-input" type="submit" value="Đăng nhập">
+        </div>
+        <div class="form-group">
+            <label>Đăng ký tài khoản</label>
+            <label>Quên tài khoản</label>
+        </div>
+    </form>
+</div>
