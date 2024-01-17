@@ -12,6 +12,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { KhoaHocDangChonComponent } from './khoa-hoc/khoa-hoc-dang-chon/khoa-hoc-dang-chon.component';
 import { register } from 'swiper/element/bundle';
+import { TextBookComponent } from './text-book/text-book.component';
 
 register();
 
@@ -24,7 +25,8 @@ register();
     HeaderComponent,
     SideBarComponent,
     FooterComponent,
-    KhoaHocDangChonComponent
+    KhoaHocDangChonComponent,
+    TextBookComponent
   ],
   imports: [
     MaterialModule,

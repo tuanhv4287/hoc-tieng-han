@@ -1,0 +1,21 @@
+.text-book-component {
+    padding-top: calc(var(--height-header-nav) + 1rem);
+
+    .title {
+        text-align: center;
+    }
+
+    .list-text-book {
+        min-height: 500px;
+        margin: 20px;
+    }
+
+    .text-box-item {
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+}

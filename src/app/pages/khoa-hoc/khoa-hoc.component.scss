@@ -35,6 +35,15 @@ li {
   padding-top: 56.25%;
   position: relative;
   width: 100%;
+  
+}
+.link:hover {
+  .layer{
+    display: flex;
+  }
+  .button{
+    display: flex;
+  }
 }
 
 //----sau này mở rộng web dùng---
