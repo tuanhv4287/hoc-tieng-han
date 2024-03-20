@@ -12,6 +12,7 @@ export class FormLoginAndRegisterComponent {
     userName : new FormControl(''),
     password : new FormControl('')
   });
+  Register:boolean = false;
   constructor(public dialogRef: MatDialogRef<FormLoginAndRegisterComponent>) { }
     
   eyeClick(event: any) {
@@ -21,6 +22,10 @@ export class FormLoginAndRegisterComponent {
     else {
       event.type = 'password'
     }
+  }
+  submit() {
+  console.log('đăng nhập thành công');
+  
   }
 
 }

@@ -1,7 +1,6 @@
 <div class="wrapper">
     <form action="" id="form-login" >
-        <div class="form-heading ">
-        Đăng nhập
+        <div  class="form-heading "> {{Register?'Đăng ký':'Đăng nhập'}}
         </div>
         <div class="form-group">
             <div class="form-group-input">
@@ -21,10 +20,10 @@
             </div>
         </div>
         <div class="form-group">
-            <input class="form-input" type="submit" value="Đăng nhập">
+            <input class="form-input" type="submit" value="{{Register?'Đăng ký':'Đăng nhập'}}">
         </div>
-        <div class="form-group">
-            <label>Đăng ký tài khoản</label>
+        <div *ngIf="!Register" class="form-group">
+            <label (click)="Register=!Register">Đăng ký tài khoản</label>
             <label>Quên tài khoản</label>
         </div>
     </form>

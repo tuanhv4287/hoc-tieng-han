@@ -14,6 +14,8 @@ import { KhoaHocDangChonComponent } from './khoa-hoc/khoa-hoc-dang-chon/khoa-hoc
 import { register } from 'swiper/element/bundle';
 import { TextBookComponent } from './text-book/text-book.component';
 import { FormLoginAndRegisterComponent } from './header/form-login-and-register/form-login-and-register.component';
+import { HousingService } from './services/housing.service';
+import { HttpClientModule } from '@angular/common/http';
 
 register();
 
@@ -34,7 +36,9 @@ register();
     MaterialModule,
     CommonModule,
     ManagementsRoutingModule,
+    HttpClientModule
   ],
+  providers: [HousingService],
   exports:[MaterialModule],
 
   bootstrap: [AppComponent],

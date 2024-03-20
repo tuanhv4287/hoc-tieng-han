@@ -9,7 +9,7 @@ import { FormLoginAndRegisterComponent } from './form-login-and-register/form-lo
 })
   
 export class HeaderComponent {
-   constructor(public dialog: MatDialog) {}
+   constructor(public   dialog: MatDialog) {}
   showSearch(sidebar: any) {
     if (sidebar.style.display == 'none' || sidebar.style.display == '') {
       sidebar.style.display = 'flex';
