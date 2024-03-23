@@ -16,6 +16,7 @@ import { TextBookComponent } from './text-book/text-book.component';
 import { FormLoginAndRegisterComponent } from './header/form-login-and-register/form-login-and-register.component';
 import { HousingService } from './services/housing.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 register();
 
@@ -30,21 +31,19 @@ register();
     FooterComponent,
     KhoaHocDangChonComponent,
     TextBookComponent,
-    FormLoginAndRegisterComponent
+    FormLoginAndRegisterComponent,
   ],
   imports: [
     MaterialModule,
     CommonModule,
     ManagementsRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [HousingService],
-  exports:[MaterialModule],
+  exports: [MaterialModule],
 
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-  
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ManagementsModule {
-  
- }
+export class ManagementsModule {}
