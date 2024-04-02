@@ -1,6 +1,6 @@
 <div class="wrapper">
-    <form id="form-login" [formGroup]="FormLogin">
-        <div class="form-heading "> {{Register?'Đăng ký':'Đăng nhập'}}
+    <form id="form-login" [formGroup]="formLogin">
+        <div class="form-heading "> {{register?'Đăng ký':'Đăng nhập'}}
         </div>
         <div class="form-group">
             <div class="form-group-input">
@@ -10,7 +10,7 @@
                     placeholder="Tài khoản" [value]="">
             </div>
         </div>
-        <mat-error *ngIf="FormLogin.get('userName')?.invalid && FormLogin?.get('userName')?.touched"  class="ui error message">
+        <mat-error *ngIf="formLogin.get('userName')?.invalid && formLogin?.get('userName')?.touched"  class="ui error message">
             <p style="color:red;">{{ getErrorMessage('userName') }}</p>
         </mat-error>
         <div class="form-group">
@@ -26,10 +26,10 @@
             </div>
 
         </div>
-        <mat-error *ngIf="FormLogin.get('password')?.invalid && FormLogin?.get('password')?.touched" class="ui error message">
+        <mat-error *ngIf="formLogin.get('password')?.invalid && formLogin?.get('password')?.touched" class="ui error message">
             <p style="color:red;">{{ getErrorMessage('password') }}</p>
         </mat-error>
-        <div *ngIf="Register">
+        <div *ngIf="register">
             <div class="form-group">
                 <div class="form-group-input">
                     <mat-icon>vpn_key</mat-icon>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <mat-error
-                *ngIf="FormLogin?.errors?.['mismatch'] && FormLogin?.touched"
+                *ngIf="formLogin?.errors?.['mismatch'] && formLogin?.touched"
                 class="ui error message">
                 <p style="color:red;">Mật khẩu không trùng khớp</p>
             </mat-error>
@@ -51,8 +51,8 @@
         <div class="form-group">
             <input class="form-input" type="submit" (click)="submit()"> 
         </div>
-        <div *ngIf="!Register" class="form-group">
-            <label (click)="Register=!Register">Đăng ký tài khoản</label>
+        <div *ngIf="!register" class="form-group">
+            <label (click)="_handleChangeForm()">Đăng ký tài khoản</label>
             <label>Quên tài khoản</label>
         </div>
     </form>

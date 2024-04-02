@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -13,22 +13,21 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './form-login-and-register.component.html',
   styleUrls: ['./form-login-and-register.component.scss'],
 })
-export class FormLoginAndRegisterComponent {
-  FormLogin: FormGroup;
-
-  Register: boolean = false;
+export class FormLoginAndRegisterComponent implements OnChanges {
+  formLogin: FormGroup;
+  register: boolean = false;
   constructor(
     public dialogRef: MatDialogRef<FormLoginAndRegisterComponent>,
     private formBuilder: FormBuilder
   ) {
-    this.FormLogin = this.formBuilder.group(
-      {
-        userName: [''],
-        password: [''],
-        confirmPassword: [''],
-      },
-      { validators: this.passwordMatchValidator }
-    );
+    this.formLogin = this.formBuilder.group({
+      userName: [''],
+      password: [''],
+      confirmPassword: [''],
+    });
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
   }
   passwordMatchValidator(control: AbstractControl) {
     const password = control.get('password')?.value;
@@ -46,66 +45,36 @@ export class FormLoginAndRegisterComponent {
     console.log('Form is invalid!');
     // Thực hiện các hành động khác khi form không hợp lệ
   }
-  // ifRegisterSetFormLogin(Register: boolean) {
-  //   if (Register) {
-  //     this.FormLogin = this.formBuilder.group(
-  //       {
-  //         userName: [''],
-  //         password: [''],
-  //         confirmPassword: [''],
-  //       },
-  //       { validators: this.passwordMatchValidator }
-  //     );
-  //   }
-  // }
+  _handleChangeForm() {
+    this.register = !this.register;
+    this.formLogin.addValidators(this.passwordMatchValidator);
+  }
   submit() {
-    if (this.Register) {
-      if (this.FormLogin.status === 'INVALID') {
-        console.log(this.FormLogin, 'thất bại');
-        console.log(this.FormLogin, 'đăng ký');
+    if (this.register) {
+      if (this.formLogin.status === 'INVALID') {
+        console.log(this.formLogin, 'thất bại');
+        console.log(this.formLogin, 'đăng ký');
       } else {
-        if (this.FormLogin?.errors?.['mismatch']) {
+        if (this.formLogin?.errors?.['mismatch']) {
           console.log('mk ko trùng');
         } else {
           console.log('thành công1');
-          console.log(this.FormLogin, 'đăng ký1');
+          console.log(this.formLogin, 'đăng ký1');
         }
       }
     } else {
-      if (this.FormLogin.status === 'INVALID') {
-        console.log(this.FormLogin, 'đă thất bại');
-        console.log(this.FormLogin, 'đăng nhập');
+      if (this.formLogin.status === 'INVALID') {
+        console.log(this.formLogin, 'đă thất bại');
+        console.log(this.formLogin, 'đăng nhập');
       } else {
         console.log('thành công');
-        console.log(this.FormLogin, 'đăng nhập');
+        console.log(this.formLogin, 'đăng nhập');
       }
     }
-    // this.ifRegisterSetFormLogin(this.Register);
-    // if (this.FormLogin.status === 'INVALID') {
-    //   console.log(this.FormLogin, 'thất bại');
-    // } else {
-    //   if (this.Register) {
-    //     if (this.passwordMatchValidator() == null) {
-    //       console.log('mk ko trùng');
-    //     } else {
-    //       console.log('thành công');
-    //       console.log(this.FormLogin, 'đăng ký');
-    //     }
-    //   } else {
-    //     console.log('thành công');
-    //     console.log(this.FormLogin, 'đăng nhập');
-    //   }
-    // }
-    // if (this.passwordMatchValidator() != null) {
-    //   console.log('mk ko trùng');
-    // } else {
-    //   console.log('thành công1');
-    //   console.log(this.FormLogin, 'đăng ký1');
-    // }
   }
 
   getErrorMessage(controlName: string) {
-    const control = this.FormLogin.get(controlName);
+    const control = this.formLogin.get(controlName);
     if (control && control.hasError('required')) {
       return 'Không được để trống';
     }
