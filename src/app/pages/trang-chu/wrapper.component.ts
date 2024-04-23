@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HousingService } from '../services/housing.service';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { authCodeFlowConfig } from 'src/app/sso.config';
+import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
 
 @Component({
   selector: 'app-wrapper',
@@ -9,7 +12,11 @@ import { HousingService } from '../services/housing.service';
 })
 export class WrapperComponent implements OnInit {
   test: any;
-  constructor(private housingService: HousingService) {
+  constructor(
+    private oauthService: OAuthService,
+    private housingService: HousingService
+  ) {
+    this.configureSingleSignOn();
     window.addEventListener('scroll', () => {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 30) {
@@ -79,6 +86,21 @@ export class WrapperComponent implements OnInit {
   }
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  configureSingleSignOn() {
+    this.oauthService.configure(authCodeFlowConfig);
+    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+  }
+  logIn() {
+    this.oauthService.initImplicitFlow();
+  }
+  logOut() {
+    this.oauthService.logOut();
+  }
+  get Token() {
+    let claims: any = this.oauthService.getIdentityClaims();
+    return claims ? claims : null;
   }
 }
 export interface SlideInterface {

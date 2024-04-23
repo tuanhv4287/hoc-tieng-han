@@ -20,8 +20,17 @@ export class HeaderComponent {
     sidebar.style.display = 'none';
   }
   openFormLogin() {
-    this.dialog.open(FormLoginAndRegisterComponent, {
+    const dialogRef = this.dialog.open(FormLoginAndRegisterComponent, {
       width: '30%',
+    });
+    dialogRef.afterClosed().subscribe((resure) => {
+      console.log(resure);
+
+      if (resure) {
+        console.log('true');
+      } else {
+        console.log('false');
+      }
     });
   }
 }

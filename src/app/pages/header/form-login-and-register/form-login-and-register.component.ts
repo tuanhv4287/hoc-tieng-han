@@ -7,6 +7,10 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { OAuthService } from 'angular-oauth2-oidc';
+import { JwksValidationHandler } from 'angular-oauth2-oidc-jwks';
+import { authCodeFlowConfig } from 'src/app/sso.config';
 
 @Component({
   selector: 'app-form-login-and-register',
@@ -18,7 +22,8 @@ export class FormLoginAndRegisterComponent implements OnChanges {
   register: boolean = false;
   constructor(
     public dialogRef: MatDialogRef<FormLoginAndRegisterComponent>,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.formLogin = this.formBuilder.group({
       userName: [''],
@@ -29,6 +34,10 @@ export class FormLoginAndRegisterComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     console.log(changes);
   }
+  // constructor(private oauthService: OAuthService) {
+  //   this.configureSingleSignOn();
+  // }
+
   passwordMatchValidator(control: AbstractControl) {
     const password = control.get('password')?.value;
     const confirmPassword = control.get('confirmPassword')?.value;
@@ -52,23 +61,16 @@ export class FormLoginAndRegisterComponent implements OnChanges {
   submit() {
     if (this.register) {
       if (this.formLogin.status === 'INVALID') {
-        console.log(this.formLogin, 'thất bại');
-        console.log(this.formLogin, 'đăng ký');
       } else {
         if (this.formLogin?.errors?.['mismatch']) {
-          console.log('mk ko trùng');
         } else {
-          console.log('thành công1');
-          console.log(this.formLogin, 'đăng ký1');
+          this.register = false;
         }
       }
     } else {
       if (this.formLogin.status === 'INVALID') {
-        console.log(this.formLogin, 'đă thất bại');
-        console.log(this.formLogin, 'đăng nhập');
       } else {
-        console.log('thành công');
-        console.log(this.formLogin, 'đăng nhập');
+        this.dialogRef.close(this.formLogin);
       }
     }
   }
