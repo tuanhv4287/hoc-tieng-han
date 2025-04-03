@@ -44,11 +44,11 @@ export class WrapperComponent implements OnInit {
 
   slides: SlideInterface[] = [
     {
-      url: 'https://data.webnhiepanh.com/wp-content/uploads/2020/11/21105453/phong-canh-1.jpg',
+      url: 'https://img.upanh.tv/2025/04/03/banner-ip16-06.png',
       title: '1',
     },
     {
-      url: 'https://media.hanamtv.vn/upload/image/202112/medium/71038_cd71e10749fea767b93941678cfcee60.jpg',
+      url: 'https://img.upanh.tv/2025/04/03/banner-ip16-07.png',
       title: '2',
     },
     {
